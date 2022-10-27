@@ -10,7 +10,7 @@
 		const numSelector = document.querySelector("#numberWords")
 		let inputsParent = document.querySelector("#inputsParent")
 
-		let numberWords = numSelect
+		let numberWords = numSelector.value
 		createInputs()
 		update()
 		numSelector.addEventListener('input', () => {update()})
