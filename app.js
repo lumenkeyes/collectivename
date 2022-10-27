@@ -40,7 +40,7 @@
 					currentChild.add(currentOption)
 
 				})
+				currentChild.addEventListener('input', () => {outBox.innerText = randomName()})
 				inputsParent.appendChild(currentChild)
 			}
-			document.body.appendChild(inputsParent);
 		}

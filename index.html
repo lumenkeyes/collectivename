@@ -3,14 +3,68 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Name Generator and Poll</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+	<style>
+		body {
+			display: grid;
+			grid-template-columns: 10% 1fr 1fr 25% 10%;
+			column-gap: 1rem;
+		}	
+		#poll {
+			grid-column: 4/5;
+		}
+		main {
+			grid-column: 2/3;
+		}
+		#nameBox {
+			grid-column: 3/4;
+		}
+		#outbox {
+			padding: 5px;
+			border: 1px solid black;
+			border-radius: 10px;
+		}
+		#subType * {
+			display: block;
+		}
+	</style>
 </head>
 <body>
-	<div id="outbox"></div>
-	<label for="numberWords">Number of words</label>
-	<input value="3" id ="numberWords" min=1 type="number">
+	<main id="generator">
+		<h2>Generator Options</h2>
+		<label for="numberWords">Number of words</label>
+		<input value="3" id ="numberWords" min=1 type="number">
 	
-	<button id="generateNew">New</button>
-	<div id="inputsParent"></div>
+		<button id="generateNew">New</button>
+		<p>Word Types</p>
+		<div id="inputsParent"></div>
+	</main>
+	<div id="nameBox">
+		<h2>Generated Name</h2>
+		<div id="outbox"></div>
+		<button>Submit current generated name</button>
+	</div>
+	<div id="poll">
+		<h2>Submit Custom Name / Rank Suggestions</h2>
+		<form action="">
+			<input type="text">
+			<div id="subType">
+			<label for="submissionType">Type of Submission</label>
+			<select id="submissionType" name="">
+				<option value="nouns">nouns</option>
+				<option value="wholeWords">whole names</option>
+				<option value="verbs">verbs</option>
+				<option value="adjectives">adjectives</option>
+				<option value="groupTypes">group types</option>
+			</select>
+			</div>
+			<button>Submit custom name</button>
+		</form>
+	</div>
 	<script src="app.js"></script>
+	<script>
+		//TODO: implement supabase connection
+	</script>
 </body>
 </html>
